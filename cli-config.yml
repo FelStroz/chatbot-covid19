@@ -1,0 +1,53 @@
+# The container name used for the run container
+container-name-run : "sunnychatbot-express-run"
+# The container name used for the tools container
+container-name-tools : "sunnychatbot-express-tools"
+
+# The project root on the host for the run container to mount to container-path-run
+host-path-run : "."
+# The project root on the host for the tools container to mount to container-path-tools
+host-path-tools : "."
+
+# The project root in the run container to mount to host-path-run
+container-path-run : "/app"
+# The project root in the tools container that will be mounted to host-path-tools
+container-path-tools : "/app"
+
+# The port mappings between the host and the container in the form [host:container]
+container-port-map : ""
+# The port mappings between the host and the container for the debug port in the form [host:container]
+container-port-map-debug : ""
+
+# The name for the dockerfile for the run container
+dockerfile-run : "docker-compose.yml"
+# The name for the dockerfile for the tools container
+dockerfile-tools : "docker-compose-tools.yml"
+use-root-user-tools: true
+
+# The name of image to create from dockerfile-run
+image-name-run : "sunnychatbot-express-run"
+# The name of image to create from dockerfile-tools
+image-name-tools : "sunnychatbot-express-tools"
+
+# The command to build the code and docker image for RUN
+build-cmd-run : "npm install"
+# The command to execute tests for the code in the tools container
+test-cmd : "npm test"
+# The command to build the code and docker image for DEBUG
+build-cmd-debug : "npm install"
+
+# The command to run the code in the run container
+run-cmd : ""
+# The command to execute debug of the code in the tools container
+debug-cmd : "npm run debug"
+# The command to stop the code
+stop-cmd : "npm stop"
+
+# The relative path to the helm chart used for Kubernetes deployment
+chart-path : "chart/sunnychatbot"
+
+# The IBM version of this configuration
+version : "0.0.3"
+ibm-generated-id : "dfcc3af2-7f6a-44e6-9447-a7c7034a8642"
+ibm-cloud-app-id : "b6f82cd1-7597-4eca-81d4-fd66c5be54a7"
+credentials-filepath : "server/localdev-config.json, vcap-local.js, credentials.json, localdev-config.json"

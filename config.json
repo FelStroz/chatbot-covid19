@@ -1,0 +1,15 @@
+{
+  "mongoDB": {
+    "host": "localhost:27017/drsaude",
+    "mongo": "mongodb"
+  },
+  "credentials": {
+    "watsonAssistant": {
+      "workspace_id": "57532c2b-680c-4be4-ae6c-984fc5db99f3",
+      "assistantId": "43503ed4-8bca-45dc-9f6b-f42b12d21546",
+      "version": "2020-04-01",
+      "iam_apikey": "EbEZPgbKwlENFEbR0LKE3gVoKL2OaCVSZEtDUVpFPonz",
+      "url": "https://gateway.watsonplatform.net/assistant/api"
+    }
+  }
+}

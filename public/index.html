@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Assistente Virtual - Fortaleza Digital</title>
+    <script src="./assets/js/chatbot.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/chatbot.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://www.fortaleza.ce.gov.br/templates/pmf/favicon.ico" rel="shortcut icon"
+          type="image/vnd.microsoft.icon"/>
+</head>
+<body onload="start()">
+
+<div class="container">
+    <div class="container-header">
+        <img src="./assets/img/Fortaleza%20contra%20corona.png" class="image-contra-covid-mobile">
+        <img src="./assets/img/infos.png" class="image-info-mobile" onclick="openInfo()">
+    </div>
+    <div class="container-right">
+        <div class="container-image">
+            <img class="image-dr-chat" src="./assets/img/drchat.png">
+        </div>
+        <span id="chatStatus" class="chat-status">Assistente Virtual</span>
+        <p class="text-description">Este assistente virtual é uma iniciativa da Prefeitura de Fortaleza, por meio da Secretaria Municipal da Saúde e a Fundação de Ciência, Tecnologia e Inovação (CITINOVA), desenvolvido em parceria com a Universidade de Fortaleza.</p>
+        <!--        <p class="text-container"><strong>FORTALEZA<br>contra o<br>CORONA Vírus</strong></p>-->
+        <p class="text-container">Apoiadores:</p>
+        <div class="container-image">
+            <img class="image-prefeitura" src="assets/img/Logo-Fortaleza-Branco.png">
+        </div>
+        <div class="container-image">
+            <img class="image-unifor" src="assets/img/logo_unifor.png">
+        </div>
+        <div class="container-image">
+            <img class="image-funcap" src="assets/img/funcap-branco.png">
+        </div>
+
+    </div>
+    <div class="chat-container">
+        <div class="chat-scroll" id="chatScroll">
+<!--            <div class="chat-message-container-bluelab" id="chat_1"><img class="image-message-bot" src="./assets/img/drchat%20rounded.png"><p class="chat-message-bluelab">Olá, eu sou o Dr. Saúde. Em alguns instantes vamos iniciar os atendimentos!</p></div>-->
+        </div>
+        <div class="chat-bottom">
+            <input class="chat-textfield" id="sender" type="text" placeholder="Digite uma mensagem..." disabled>
+            <button class="chat-send-button" onclick="sendMessageByElement(document.getElementById('sender'))">
+                <img src="./assets/img/Enviar.png">
+            </button>
+        </div>
+    </div>
+    <div class="container-left">
+        <div class="container-image">
+            <img src="./assets/img/Fortaleza%20contra%20corona.png" class="image-contra-covid">
+        </div>
+    </div>
+    <div class="modal-external-container" id="infoModal">
+        <div class="modal-internal-container">
+            <img src="./assets/img/X.png" class="modal-close-button" onclick="closeInfo()">
+            <div class="container-image">
+                <img class="image-contra-covid" src="./assets/img/drchat%20rounded.png">
+            </div>
+            <p class="text-description">Este assistente virtual é uma iniciativa da Prefeitura de Fortaleza, por meio da Secretaria Municipal da Saúde e a Fundação de Ciência, Tecnologia e Inovação (CITINOVA), desenvolvido em parceria com a Universidade de Fortaleza.</p>
+            <p class="text-container">Apoiadores:</p>
+            <div class="container-image-apoiadores">
+                <img class="image-prefeitura" src="assets/img/Logo-Fortaleza-Branco.png">
+            </div>
+            <div class="container-image-apoiadores">
+                <img class="image-unifor" src="assets/img/logo_unifor.png">
+            </div>
+            <div class="container-image">
+                <img class="image-funcap" src="assets/img/funcap-branco.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="screenDirection" class="hintDirection">
+        <img src="./assets/img/X.png" class="modal-close-button" onclick="closeInfo()">
+        <p class="hintText">Para utilizar o chatbot é necessário que você use ele em pé!</p>
+    </div>
+</div>
+</body>
+</html>

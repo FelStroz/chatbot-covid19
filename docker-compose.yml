@@ -1,0 +1,32 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+        - "80:80"
+    volumes:
+      - .:/app
+    links:
+    - mongo
+    restart: always
+    depends_on:
+    - mongo
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ftdigital
+      MONGO_INITDB_ROOT_PASSWORD: fdg0o9i8u
+    ports:
+      - "27017:27017"
+    volumes:
+      - /data/db:/data/db
+      - /data/share:/data/share
+networks:
+  default:
+    #    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.2.1/24"
